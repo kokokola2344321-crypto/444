@@ -1,0 +1,509 @@
+#profile-title: ✈️Шахед впн✈️
+#announce: 🔰 Нажми на спидометр или молнию, чтобы проверить соединение. Меньше ms - лучше | n/a - не работает. Если ВПН плохо работает, то нажмите на 🔄️.
+#profile-update-interval: 1
+#support-url: m
+#profile-web-page-url: mю
+
+{
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "google",
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "cloudflare",
+        "address": "https://1.1.1.1/dns-query",
+        "detour": "direct"
+      }
+    ],
+    "strategy": "prefer_ipv4"
+  },
+  "inbounds": [
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "sniff": true
+    },
+    {
+      "type": "http",
+      "tag": "http-in",
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "sniff": true
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "proxy",
+      "outbounds": [
+        "⬇️Wifi⬇️",
+        "🇬🇧 Великобритания",
+        "🇩🇪 Германия",
+        "🇭🇰 Гонконг",
+        "🇮🇪 Ирландия",
+        "🇮🇹 Италия",
+        "🇳🇱 Нидерланды",
+        "🇸🇬 Сингапур",
+        "🇫🇮 Финляндия",
+        "wifi",
+        "LTE",
+        "⬇️LTE⬇️",
+        "🇫🇮 Finland, Helsinki",
+        "🇫🇷 France, Gravelines",
+        "🇩🇪 Germany, Falkenstein",
+        "🇮🇹 Italy, Milan",
+        "🌐 Anycast-IP",
+        "⬇️Обход белых списков⬇️",
+        "🇩🇪 Германия Тариф 1-10",
+        "🇳🇱 The Netherlands",
+        "🇷🇺 Russia (yandex.ru)",
+        "🇺🇸 United States (ok.ru)",
+        "direct"
+      ],
+      "default": "⬇️Wifi⬇️"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "vless",
+      "tag": "⬇️Wifi⬇️",
+      "server": "194.55.188.210",
+      "server_port": 8543,
+      "uuid": "c411b155-694c-43ce-b870-db23d9e57ffa",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amd.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "GlyOL0_vtEBPv7PYjlcwHG8fSVa33Vwb2faRy9j9zjo",
+          "short_id": "b86d2663"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc-svc"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇬🇧 Великобритания",
+      "server": "fastly.com",
+      "server_port": 80,
+      "uuid": "da48859d-edf9-4a8c-a026-80910591f284",
+      "tls": {
+        "enabled": false
+      },
+      "transport": {
+        "type": "http",
+        "path": "/Tignal",
+        "host": ["tignaltofansv8.global.ssl.fastly.net"]
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 Германия",
+      "server": "151.101.193.57",
+      "server_port": 80,
+      "uuid": "TIGNAL-CRYPTO",
+      "tls": {
+        "enabled": false
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "host": ["InternetAzadRobot19to502.global.ssl.fastly.net"]
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇭🇰 Гонконг",
+      "server": "47.82.87.196",
+      "server_port": 50724,
+      "uuid": "47030ea3-4e8c-4dd6-b440-418a7a54c1a0",
+      "tls": {
+        "enabled": false
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇮🇪 Ирландия",
+      "server": "89.127.222.104",
+      "server_port": 443,
+      "uuid": "329f5c49-c8a1-46e0-8e4d-79b0bebdc59e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "dl.google.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "8SMUvtqSS3vVlrQgr1G_bu9ese9m-Ze4cWvpRFoC3AM",
+          "short_id": "d3a09fd1"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇮🇹 Италия",
+      "server": "fastly.com",
+      "server_port": 80,
+      "uuid": "InternetAzadRobot",
+      "tls": {
+        "enabled": false
+      },
+      "transport": {
+        "type": "http",
+        "path": "/tofan",
+        "host": ["sv6tignal.global.ssl.fastly.net"]
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱 Нидерланды",
+      "server": "146.103.121.166",
+      "server_port": 443,
+      "uuid": "ea484535-0170-4ec8-bb3c-a9dbaa7412d7",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "nl2.panel11.ru",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "N1HRDSdKHqdbSX_N5SUfFiokXcN-jQzu-Na244bA21I",
+          "short_id": "c64556c616970b14"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬 Сингапур",
+      "server": "sgc.tdz-server.store",
+      "server_port": 20378,
+      "uuid": "Telegram:@TuhinBroh",
+      "tls": {
+        "enabled": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@TuhinBroh"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮 Финляндия",
+      "server": "185.18.250.127",
+      "server_port": 2096,
+      "uuid": "2ee26119-94e5-40b4-ba3a-16354021b600",
+      "tls": {
+        "enabled": true,
+        "server_name": "69565ce3109804e7813f98ee.mmdbay.blog",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/graphql",
+        "headers": {
+          "Host": "69565ce3109804e7813f98ee.mmdbay.blog"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "wifi",
+      "server": "62.238.32.25",
+      "server_port": 443,
+      "uuid": "1b9e301d-cecd-4eb1-8b36-eef811c2696d",
+      "tls": {
+        "enabled": true,
+        "server_name": "yastatic.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "3LUIM_6cYceTgNt6LWnR8YSVrenpLsh-FIGDrmfjjwc",
+          "short_id": "5e841fab"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "LTE",
+      "server": "91.107.189.143",
+      "server_port": 29039,
+      "uuid": "16c6faa4-1162-49ca-acf7-059afdf1ecd3",
+      "tls": {
+        "enabled": false
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "⬇️LTE⬇️",
+      "server": "194.55.188.210",
+      "server_port": 8543,
+      "uuid": "c411b155-694c-43ce-b870-db23d9e57ffa",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amd.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "GlyOL0_vtEBPv7PYjlcwHG8fSVa33Vwb2faRy9j9zjo",
+          "short_id": "b86d2663"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc-svc"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮 Finland, Helsinki",
+      "server": "fi.roblugo.su",
+      "server_port": 443,
+      "uuid": "c980c5c7-1170-4a65-98c2-90d95f17ab80",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "fi.roblugo.su",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "su3dq3BDLDkX-jIjq3GyVUXwqzD7CNVYzKtOcO4HQ24",
+          "short_id": "bbfb4f7a53e22dd3"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇷 France, Gravelines",
+      "server": "151.101.129.57",
+      "server_port": 80,
+      "uuid": "TIGNAL-CRYPTO",
+      "tls": {
+        "enabled": false
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "host": ["InternetAzadRobot31dx253.global.ssl.fastly.net"]
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 Germany, Falkenstein",
+      "server": "melli.irandoc.info",
+      "server_port": 443,
+      "uuid": "eb170a70-6422-49b6-8b26-a11426b4c4b0",
+      "tls": {
+        "enabled": true,
+        "server_name": "melli.irandoc.info",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/56102/processing/media"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇮🇹 Italy, Milan",
+      "server": "213.218.212.4",
+      "server_port": 443,
+      "uuid": "301d514e-4aa0-47b0-ba44-a0cb891cd52f",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.samsung.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "OZVjfQBboTDTBw0baMFqzVPsVUI4FNQmspTEb0b0zW4",
+          "short_id": "a1b2c3d4"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐 Anycast-IP",
+      "server": "g9.steptofsvo.com",
+      "server_port": 443,
+      "uuid": "279828c6-13f2-439c-9a4e-ea7d4f470fa4",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "g9.steptofsvo.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ivgTfLR13A6xBsicIA28OPoav2tXlsstTTmGuETfnSk",
+          "short_id": "6d6f13013d3e1d0c"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "⬇️Обход белых списков⬇️",
+      "server": "194.55.188.210",
+      "server_port": 8543,
+      "uuid": "c411b155-694c-43ce-b870-db23d9e57ffa",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amd.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "GlyOL0_vtEBPv7PYjlcwHG8fSVa33Vwb2faRy9j9zjo",
+          "short_id": "b86d2663"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc-svc"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 Германия Тариф 1-10",
+      "server": "158.160.46.191",
+      "server_port": 443,
+      "uuid": "9c68076b-08bb-49e3-a9da-5de50fefb0df",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "max.ru",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "PMSegML41So-j-eykh0j-iOL2FUSETIYUC3DxBQ821k",
+          "short_id": "c4e85bc9"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱 The Netherlands",
+      "server": "ru.nikelroot.ru",
+      "server_port": 2083,
+      "uuid": "5f5d8431-f333-43d6-af84-d3583464edb3",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "salam-ekb-ktc-158.rtbcdn.ru",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "Nv3J4zvyikrGTvcCQhptOAxcd_00-M9zJYj9fg6AQTI",
+          "short_id": "9f62efd763c3"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇷🇺 Russia (yandex.ru)",
+      "server": "srv-2f2951.21freedom.net",
+      "server_port": 443,
+      "uuid": "7c1b98f1-33c5-497a-adfd-61e73645f646",
+      "tls": {
+        "enabled": true,
+        "server_name": "yandex.ru",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "L       gjdygiPjJnS3V2C-W1lbsslZERqXYn8b104bW7PetDA08XA",
+          "short_id": "c897d075c4775e4c"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/api/v1/35f40c80",
+        "host": ["vk.com"]
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸 United States (ok.ru)",
+      "server": "srv-0dc9de.21freedom.net",
+      "server_port": 443,
+      "uuid": "eeadbe1d-952c-49a8-8641-ce6f51af8087",
+      "tls": {
+        "enabled": true,
+        "server_name": "ok.ru",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ZoszE-gLPQ2bhLcg62hBOGkFKYV5vSNat7Smd0Kk8G0",
+          "short_id": "f7749e1cc2fd5296"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/api/v1/00e7edce",
+        "host": ["vk.com"]
+      }
+    }
+  ]
+}. 
+
+
+
+
+
