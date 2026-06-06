@@ -1,8 +1,8 @@
 #profile-title: Free VPN
 #announce: 🔰 Нажми на спидометр или молнию, чтобы проверить соединение. Меньше ms - лучше | n/a - не работает. Если ВПН плохо работает, то нажмите на 🔄️.
 #profile-update-interval: 1
-#support-url: m
-#profile-web-page-url: mю
+#support-url:https://t.me/vpnfeeeek
+#profile-web-page-url:https://t.me/vpnfeeeek
 
 vless://a57d16f0-b959-4481-8767-c9f5acda86e9@wifi-xhttp.realityanti-vpn.xyz:678?mode=auto&path=%2F&security=reality&encryption=none&pbk=n6fcB9QRuFYAJOjIb3FQwCo6xyj2wihW5VpcSm1zHEs&fp=edge&allowinsecure=0&type=xhttp&sni=www.amd.com&sid=32d6b1bf#🇷🇺📶 WiFi|Россия ⚡
 vless://50b95deb-6394-46c5-b88a-583e5b3ca7ee@146.185.209.234:443?security=reality&encryption=none&pbk=PGccrEdFmBaB1rQFJqM-a9jJ1pFsxhUP2sD9KTw5Oz4&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=ads.x5.ru&sid=f69d7af2d5fc5e0c#📶 Только для Telegram #1
