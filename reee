@@ -1,8 +1,8 @@
 #profile-title: VPN
 #announce: 🔰 Нажми на спидометр или молнию, чтобы проверить соединение. Меньше ms - лучше | n/a - не работает. Если ВПН плохо работает, то нажмите на 🔄️.
 #profile-update-interval: 1
-#support-url:
-#profile-web-page-url:
+#support-url:б
+#profile-web-page-url:б
 
 vless://a57d16f0-b959-4481-8767-c9f5acda86e9@wifi2-xhttp.realityanti-vpn.xyz:678?mode=auto&path=%2F&security=reality&encryption=none&pbk=n6fcB9QRuFYAJOjIb3FQwCo6xyj2wihW5VpcSm1zHEs&fp=edge&allowinsecure=0&type=xhttp&sni=www.amd.com&sid=32d6b1bf#🇷🇺📶 WiFi|Россия ⚡
 vless://1a96000b-a14d-405a-b5b1-f14b9366a279@wifi2-grpc.realityanti-vpn.xyz:603?mode=gun&security=reality&encryption=none&authority=&pbk=WEoZRaQvvs9EYMij8-CzaMx1687u_yuk39FUMTMXACo&fp=edge&allowinsecure=0&type=grpc&serviceName=&sni=www.amd.com&sid=0da0e140#🇷🇺📶 WiFi|Россия 🔸
