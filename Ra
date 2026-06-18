@@ -1,10 +1,7 @@
 {
   "remarks": "VPN",
   "dns": {
-    "servers": [
-      "1.1.1.1",
-      "https://dns.adguard.com/dns-query"
-    ],
+    "servers": ["1.1.1.1", "https://dns.adguard.com/dns-query"],
     "queryStrategy": "UseIPv4"
   },
   "inbounds": [
