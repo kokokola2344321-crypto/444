@@ -1310,7 +1310,7 @@
     ]
   },
   {
-    "remarks": "%F0%9F%87%A9%F0%9F%87%AA+Германия 1 |+WIFI",
+    "remarks": "🇩🇪 Германия 1 | WIFI",
     "dns": {
       "servers": ["1.1.1.1", "1.0.0.1"],
       "queryStrategy": "UseIP"
@@ -1380,7 +1380,7 @@
     ]
   },
   {
-    "remarks": "%F0%9F%87%A9%F0%9F%87%AA++Германия 2 |+WIFI",
+    "remarks": "🇩🇪 Германия 2 | WIFI",
     "dns": {
       "servers": ["1.1.1.1", "1.0.0.1"],
       "queryStrategy": "UseIP"
