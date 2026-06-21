@@ -1,6 +1,6 @@
 [
   {
-    "remarks": "🇪🇺 Самый быстрый (балансировка)",
+    "remarks": "🇪🇺 Самый быстрый",
     "dns": {
       "queryStrategy": "UseIPv4",
       "servers": [
