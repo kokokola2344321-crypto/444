@@ -2645,9 +2645,7 @@
       { "tag": "direct", "protocol": "freedom" },
       { "tag": "block", "protocol": "blackhole" }
     ]
-  }
-]
-[
+  },
   {
     "remarks": "🇩🇪 Обход LTE 11",
     "dns": {
@@ -2930,5 +2928,3 @@
     ]
   }
 ]
-
-
