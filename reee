@@ -776,7 +776,7 @@
     }
   },
   {
-    "remarks": "🇳🇱Недерланды 1 | WIFI",
+    "remarks": "🇳🇱 Нидерланды 1 | WIFI",
     "dns": {
       "servers": ["1.1.1.1", "1.0.0.1"],
       "queryStrategy": "UseIP"
@@ -839,7 +839,7 @@
     ]
   },
   {
-    "remarks": "🇳🇱Недерланды 2 | WIFI",
+    "remarks": "🇳🇱 Нидерланды 2 | WIFI",
     "dns": {
       "servers": ["1.1.1.1", "1.0.0.1"],
       "queryStrategy": "UseIP"
@@ -962,676 +962,6 @@
   {
     "remarks": "🇳🇱 Нидерланды 4 | WIFI",
     "dns": {
-      "tag": "dns-inbound",
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://8.8.4.4/dns-query",
-        "https://1.1.1.1/dns-query",
-        "https://1.0.0.1/dns-query"
-      ],
-      "queryStrategy": "UseIPv4"
-    },
-    "log": {
-      "loglevel": "warning"
-    },
-    "stats": {},
-    "policy": {
-      "levels": {
-        "8": {
-          "connIdle": 300,
-          "handshake": 4,
-          "uplinkOnly": 1,
-          "downlinkOnly": 1
-        }
-      },
-      "system": {
-        "statsOutboundUplink": true,
-        "statsOutboundDownlink": true
-      }
-    },
-    "routing": {
-      "rules": [
-        {
-          "port": 53,
-          "type": "field",
-          "outboundTag": "dns-out"
-        },
-        {
-          "type": "field",
-          "domain": ["geosite:torrent"],
-          "outboundTag": "block"
-        },
-        {
-          "type": "field",
-          "domain": [
-            "geosite:google-play",
-            "geosite:github",
-            "geosite:twitch-ads",
-            "geosite:youtube",
-            "geosite:telegram"
-          ],
-          "balancerTag": "balancer"
-        },
-        {
-          "type": "field",
-          "domain": [
-            "geosite:private",
-            "geosite:category-ru",
-            "geosite:whitelist",
-            "geosite:microsoft",
-            "geosite:apple",
-            "geosite:epicgames",
-            "geosite:riot",
-            "geosite:escapefromtarkov",
-            "geosite:steam",
-            "geosite:twitch",
-            "geosite:pinterest",
-            "geosite:faceit"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "block"
-        },
-        {
-          "ip": ["geoip:private", "geoip:direct"],
-          "type": "field",
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "balancerTag": "balancer"
-        }
-      ],
-      "balancers": [
-        {
-          "tag": "balancer",
-          "selector": ["proxy"],
-          "strategy": {
-            "type": "leastLoad",
-            "settings": {
-              "maxRTT": "2s",
-              "expected": 2,
-              "baselines": ["400ms", "800ms"],
-              "tolerance": 0.25
-            }
-          }
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": {
-          "udp": true,
-          "auth": "noauth",
-          "userLevel": 8
-        },
-        "sniffing": {
-          "enabled": true,
-          "routeOnly": true,
-          "destOverride": ["http", "tls", "quic"]
-        }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": {
-          "userLevel": 8,
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "enabled": true,
-          "routeOnly": true,
-          "destOverride": ["http", "tls", "quic"]
-        }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "nl2.univesalsrv.com",
-              "port": 443,
-              "users": [
-                {
-                  "id": "c1c6b176-7443-42f0-be23-bba848cc71f5",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "grpc",
-          "grpcSettings": {
-            "serviceName": "mobile.api.Event",
-            "authority": "nl2.univesalsrv.com",
-            "mode": false
-          },
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "nl2.univesalsrv.com",
-            "fingerprint": "firefox",
-            "alpn": ["h2"]
-          }
-        }
-      },
-      {
-        "tag": "proxy-2",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "nl3.univesalsrv.com",
-              "port": 443,
-              "users": [
-                {
-                  "id": "c1c6b176-7443-42f0-be23-bba848cc71f5",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "grpc",
-          "grpcSettings": {
-            "serviceName": "mobile.api.Event",
-            "authority": "nl3.univesalsrv.com",
-            "mode": false
-          },
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "nl3.univesalsrv.com",
-            "fingerprint": "firefox",
-            "alpn": ["h2"]
-          }
-        }
-      },
-      {
-        "tag": "proxy-3",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "nl1.univesalsrv.com",
-              "port": 443,
-              "users": [
-                {
-                  "id": "c1c6b176-7443-42f0-be23-bba848cc71f5",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "grpc",
-          "grpcSettings": {
-            "serviceName": "mobile.api.Event",
-            "authority": "nl1.univesalsrv.com",
-            "mode": false
-          },
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "nl1.univesalsrv.com",
-            "fingerprint": "firefox",
-            "alpn": ["h2"]
-          }
-        }
-      },
-      {
-        "tag": "proxy-4",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "nl4.univesalsrv.com",
-              "port": 443,
-              "users": [
-                {
-                  "id": "c1c6b176-7443-42f0-be23-bba848cc71f5",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "grpc",
-          "grpcSettings": {
-            "serviceName": "mobile.api.Event",
-            "authority": "nl4.univesalsrv.com",
-            "mode": false
-          },
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "nl4.univesalsrv.com",
-            "fingerprint": "firefox",
-            "alpn": ["h2"]
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom",
-        "settings": {
-          "domainStrategy": "UseIP"
-        }
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole"
-      },
-      {
-        "tag": "dns-out",
-        "protocol": "dns"
-      }
-    ],
-    "burstObservatory": {
-      "pingConfig": {
-        "timeout": "3s",
-        "interval": "1m",
-        "sampling": 2,
-        "destination": "http://connectivitycheck.gstatic.com/generate_204",
-        "connectivity": "http://connectivitycheck.gstatic.com/generate_204"
-      },
-      "subjectSelector": ["proxy"]
-    }
-  },
-  {
-    "remarks": "🇳🇱 Нидерланды 5 | WIFI",
-    "dns": {
-      "hosts": {
-        "lkfl2.nalog.ru": "213.24.64.175",
-        "lknpd.nalog.ru": "213.24.64.181"
-      },
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        {
-          "address": "https://8.8.8.8/dns-query",
-          "domains": [
-            "geosite:github",
-            "geosite:twitch-ads",
-            "geosite:youtube",
-            "geosite:telegram"
-          ]
-        },
-        {
-          "address": "https://77.88.8.8/dns-query",
-          "domains": [
-            "geosite:private",
-            "geosite:category-ru",
-            "geosite:whitelist",
-            "geosite:microsoft",
-            "geosite:apple",
-            "geosite:google-play",
-            "geosite:epicgames",
-            "geosite:riot",
-            "geosite:escapefromtarkov",
-            "geosite:steam",
-            "geosite:origin",
-            "geosite:twitch",
-            "geosite:pinterest",
-            "geosite:faceit"
-          ]
-        }
-      ],
-      "queryStrategy": "UseIPv4"
-    },
-    "log": {
-      "loglevel": "warning"
-    },
-    "stats": {},
-    "policy": {
-      "levels": {
-        "8": {
-          "connIdle": 300,
-          "handshake": 4,
-          "uplinkOnly": 1,
-          "downlinkOnly": 1
-        }
-      },
-      "system": {
-        "statsOutboundUplink": true,
-        "statsOutboundDownlink": true
-      }
-    },
-    "routing": {
-      "rules": [
-        {
-          "port": 53,
-          "outboundTag": "dns-out"
-        },
-        {
-          "domain": [
-            "geosite:win-spy",
-            "geosite:torrent",
-            "geosite:category-ads"
-          ],
-          "outboundTag": "block"
-        },
-        {
-          "ip": ["77.88.8.8"],
-          "outboundTag": "direct"
-        },
-        {
-          "ip": ["8.8.8.8"],
-          "outboundTag": "proxy"
-        },
-        {
-          "domain": [
-            "geosite:github",
-            "geosite:twitch-ads",
-            "geosite:youtube",
-            "geosite:telegram"
-          ],
-          "outboundTag": "proxy"
-        },
-        {
-          "domain": [
-            "geosite:private",
-            "geosite:category-ru",
-            "geosite:whitelist",
-            "geosite:microsoft",
-            "geosite:apple",
-            "geosite:google-play",
-            "geosite:epicgames",
-            "geosite:riot",
-            "geosite:escapefromtarkov",
-            "geosite:steam",
-            "geosite:origin",
-            "geosite:twitch",
-            "geosite:pinterest",
-            "geosite:faceit"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "ip": ["geoip:private", "geoip:direct"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": {
-          "udp": true,
-          "auth": "noauth",
-          "userLevel": 8
-        },
-        "sniffing": {
-          "enabled": true,
-          "destOverride": ["http", "quic", "tls"]
-        }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": {
-          "userLevel": 8
-        },
-        "sniffing": {
-          "enabled": true,
-          "destOverride": ["http", "quic", "tls"]
-        }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "81.31.210.65",
-              "port": 7443,
-              "users": [
-                {
-                  "id": "c1c6b176-7443-42f0-be23-bba848cc71f5",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "tcpSettings": {},
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "www.microsoft.com",
-            "publicKey": "5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI",
-            "shortId": "d82fb387",
-            "fingerprint": "chrome"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole"
-      },
-      {
-        "tag": "dns-out",
-        "protocol": "dns",
-        "proxySettings": {
-          "tag": "proxy"
-        }
-      }
-    ]
-  },
-  {
-    "remarks": "🇳🇱 Нидерланды 6 | WIFI",
-    "dns": {
-      "servers": ["1.1.1.1", "1.0.0.1"],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": { "udp": true, "auth": "noauth" },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": { "allowTransparent": false },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "192.142.18.127",
-              "port": 443,
-              "method": "aes-256-gcm",
-              "password": "ZDI4OTBjOGYtOGQxNS00MmI3LTgwZTMtNjg3ZmFiOGIyYzdh"
-            }
-          ]
-        }
-      },
-      { "tag": "direct", "protocol": "freedom" },
-      { "tag": "block", "protocol": "blackhole" }
-    ]
-  },
-  {
-    "remarks": "🇳🇱 Нидерланды 7 | WIFI",
-    "dns": {
-      "servers": ["1.1.1.1", "1.0.0.1"],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": { "udp": true, "auth": "noauth" },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": { "allowTransparent": false },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "103.112.68.84",
-              "port": 443,
-              "users": [
-                {
-                  "id": "40de6299-d792-4868-8a82-411ead0aa943",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "tcpSettings": {},
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "gateway.icloud.com",
-            "publicKey": "L0acYoTxKR5ix7LXAmP10cy06n2JjgkXTojGjtWAqww",
-            "shortId": "ed7b9bdfedb9b8e5",
-            "fingerprint": "firefox"
-          }
-        }
-      },
-      { "tag": "direct", "protocol": "freedom" },
-      { "tag": "block", "protocol": "blackhole" }
-    ]
-  },
-  {
-    "remarks": "🇳🇱 Нидерланды 8 | WIFI",
-    "dns": {
-      "servers": ["1.1.1.1", "1.0.0.1"],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": { "udp": true, "auth": "noauth" },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": { "allowTransparent": false },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "192.142.18.127",
-              "port": 443,
-              "method": "aes-256-gcm",
-              "password": "YzFmZDBiMjktNmMxOC00MDQyLTg3YTItZjViZDc4NzhkYzBh"
-            }
-          ]
-        }
-      },
-      { "tag": "direct", "protocol": "freedom" },
-      { "tag": "block", "protocol": "blackhole" }
-    ]
-  }
-]
-  {
-    "remarks": "🇳🇱 Нидерланды 1 | WIFI",
-    "dns": {
       "servers": ["1.1.1.1", "1.0.0.1"],
       "queryStrategy": "UseIP"
     },
@@ -1700,7 +1030,7 @@
     ]
   },
   {
-    "remarks": "🇳🇱 Нидерланды 2 | WIFI",
+    "remarks": "🇳🇱 Нидерланды 5 | WIFI",
     "dns": {
       "servers": ["1.1.1.1", "1.0.0.1"],
       "queryStrategy": "UseIP"
@@ -1770,58 +1100,7 @@
     ]
   },
   {
-    "remarks": "🇳🇱 Нидерланды 3 | WIFI",
-    "dns": {
-      "servers": ["1.1.1.1", "1.0.0.1"],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": { "udp": true, "auth": "noauth" },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": { "allowTransparent": false },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "hysteria",
-        "settings": { "address": "2.26.114.181", "port": 443, "version": 2 },
-        "streamSettings": {
-          "network": "hysteria",
-          "hysteriaSettings": { "version": 2, "auth": "d01f7cd0-3df0-4c2b-bd37-43d1ab2cd9c5" },
-          "security": "tls",
-          "tlsSettings": { "serverName": "nl1.umarketvpn.pro", "fingerprint": "firefox", "alpn": ["h3"] }
-        }
-      },
-      { "tag": "direct", "protocol": "freedom" },
-      { "tag": "block", "protocol": "blackhole" }
-    ]
-  },
-  {
-    "remarks": "🇳🇱 Нидерланды 4 | WIFI",
+    "remarks": "🇳🇱 Нидерланды 6 | WIFI",
     "dns": {
       "tag": "dns-inbound",
       "servers": [
@@ -2119,7 +1398,7 @@
     }
   },
   {
-    "remarks": "🇳🇱 Нидерланды 5 | WIFI",
+    "remarks": "🇳🇱 Нидерланды 7 | WIFI",
     "dns": {
       "hosts": {
         "lkfl2.nalog.ru": "213.24.64.175",
@@ -2312,7 +1591,7 @@
     ]
   },
   {
-    "remarks": "🇳🇱 Нидерланды 6 | WIFI",
+    "remarks": "🇳🇱 Нидерланды 8 | WIFI",
     "dns": {
       "servers": ["1.1.1.1", "1.0.0.1"],
       "queryStrategy": "UseIP"
@@ -2366,7 +1645,7 @@
     ]
   },
   {
-    "remarks": "🇳🇱 Нидерланды 7 | WIFI",
+    "remarks": "🇳🇱 Нидерланды 9 | WIFI",
     "dns": {
       "servers": ["1.1.1.1", "1.0.0.1"],
       "queryStrategy": "UseIP"
@@ -2436,7 +1715,7 @@
     ]
   },
   {
-    "remarks": "🇳🇱 Нидерланды 8 | WIFI",
+    "remarks": "🇳🇱 Нидерланды 10 | WIFI",
     "dns": {
       "servers": ["1.1.1.1", "1.0.0.1"],
       "queryStrategy": "UseIP"
@@ -2488,8 +1767,7 @@
       { "tag": "direct", "protocol": "freedom" },
       { "tag": "block", "protocol": "blackhole" }
     ]
-  }
-]
+  },
   {
     "remarks": "🇩🇪 Германия 1 | WIFI",
     "dns": {
@@ -2681,7 +1959,7 @@
     ]
   },
   {
-    "remarks": "🇷🇺Ютуб без рекламы",
+    "remarks": "🇷🇺 Ютуб без рекламы",
     "dns": {
       "servers": ["1.1.1.1", "1.0.0.1"],
       "queryStrategy": "UseIP"
