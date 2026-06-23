@@ -2152,43 +2152,36 @@
     ]
   },
   {
-    "remarks": "🇩🇪 Обход LTE 1",
+    "remarks": "🇪🇺 Самый быстрый (LTE)",
     "dns": {
-      "servers": ["1.1.1.1", "1.0.0.1"],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
+      "queryStrategy": "UseIPv4",
+      "servers": [
+        "1.1.1.1",
+        "https://dns.adguard.com/dns-query"
+      ]
     },
     "inbounds": [
       {
-        "tag": "socks",
-        "port": 10808,
         "listen": "127.0.0.1",
+        "port": 10808,
         "protocol": "socks",
-        "settings": { "udp": true, "auth": "noauth" },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
+        "settings": { "auth": "noauth", "udp": true },
+        "sniffing": { "destOverride": ["http", "tls", "quic"], "enabled": true, "routeOnly": false },
+        "tag": "socks"
       },
       {
-        "tag": "http",
-        "port": 10809,
         "listen": "127.0.0.1",
+        "port": 10809,
         "protocol": "http",
         "settings": { "allowTransparent": false },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
+        "sniffing": { "destOverride": ["http", "tls", "quic"], "enabled": true, "routeOnly": false },
+        "tag": "http"
       }
     ],
+    "log": { "dnsLog": true, "loglevel": "warning" },
     "outbounds": [
       {
-        "tag": "proxy",
+        "tag": "proxy-1",
         "protocol": "shadowsocks",
         "settings": {
           "servers": [
@@ -2201,48 +2194,8 @@
           ]
         }
       },
-      { "tag": "direct", "protocol": "freedom" },
-      { "tag": "block", "protocol": "blackhole" }
-    ]
-  },
-  {
-    "remarks": "🇷🇺 Обход LTE 2",
-    "dns": {
-      "servers": ["1.1.1.1", "1.0.0.1"],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
       {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": { "udp": true, "auth": "noauth" },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": { "allowTransparent": false },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
+        "tag": "proxy-2",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -2270,48 +2223,8 @@
           }
         }
       },
-      { "tag": "direct", "protocol": "freedom" },
-      { "tag": "block", "protocol": "blackhole" }
-    ]
-  },
-  {
-    "remarks": "🇷🇺 Обход LTE 3",
-    "dns": {
-      "servers": ["1.1.1.1", "1.0.0.1"],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
       {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": { "udp": true, "auth": "noauth" },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": { "allowTransparent": false },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
+        "tag": "proxy-3",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -2339,48 +2252,8 @@
           }
         }
       },
-      { "tag": "direct", "protocol": "freedom" },
-      { "tag": "block", "protocol": "blackhole" }
-    ]
-  },
-  {
-    "remarks": "🇷🇺 Обход LTE 4",
-    "dns": {
-      "servers": ["1.1.1.1", "1.0.0.1"],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
       {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": { "udp": true, "auth": "noauth" },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": { "allowTransparent": false },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
+        "tag": "proxy-4",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -2408,48 +2281,8 @@
           }
         }
       },
-      { "tag": "direct", "protocol": "freedom" },
-      { "tag": "block", "protocol": "blackhole" }
-    ]
-  },
-  {
-    "remarks": "🇷🇺 Обход LTE 5",
-    "dns": {
-      "servers": ["1.1.1.1", "1.0.0.1"],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
       {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": { "udp": true, "auth": "noauth" },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": { "allowTransparent": false },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
+        "tag": "proxy-5",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -2477,48 +2310,8 @@
           }
         }
       },
-      { "tag": "direct", "protocol": "freedom" },
-      { "tag": "block", "protocol": "blackhole" }
-    ]
-  },
-  {
-    "remarks": "🇷🇺 Обход LTE 6",
-    "dns": {
-      "servers": ["1.1.1.1", "1.0.0.1"],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
       {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": { "udp": true, "auth": "noauth" },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": { "allowTransparent": false },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
+        "tag": "proxy-6",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -2546,48 +2339,8 @@
           }
         }
       },
-      { "tag": "direct", "protocol": "freedom" },
-      { "tag": "block", "protocol": "blackhole" }
-    ]
-  },
-  {
-    "remarks": "🇷🇺 Обход LTE 7",
-    "dns": {
-      "servers": ["1.1.1.1", "1.0.0.1"],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
       {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": { "udp": true, "auth": "noauth" },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": { "allowTransparent": false },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
+        "tag": "proxy-7",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -2619,48 +2372,8 @@
           }
         }
       },
-      { "tag": "direct", "protocol": "freedom" },
-      { "tag": "block", "protocol": "blackhole" }
-    ]
-  },
-  {
-    "remarks": "🇷🇺 Обход LTE 8",
-    "dns": {
-      "servers": ["1.1.1.1", "1.0.0.1"],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
       {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": { "udp": true, "auth": "noauth" },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": { "allowTransparent": false },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
+        "tag": "proxy-8",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -2688,48 +2401,8 @@
           }
         }
       },
-      { "tag": "direct", "protocol": "freedom" },
-      { "tag": "block", "protocol": "blackhole" }
-    ]
-  },
-  {
-    "remarks": "🇷🇺 Обход LTE 9",
-    "dns": {
-      "servers": ["1.1.1.1", "1.0.0.1"],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
       {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": { "udp": true, "auth": "noauth" },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": { "allowTransparent": false },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
+        "tag": "proxy-9",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -2757,48 +2430,8 @@
           }
         }
       },
-      { "tag": "direct", "protocol": "freedom" },
-      { "tag": "block", "protocol": "blackhole" }
-    ]
-  },
-  {
-    "remarks": "🇷🇺 Обход LTE 10",
-    "dns": {
-      "servers": ["1.1.1.1", "1.0.0.1"],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "protocol": ["bittorrent"],
-          "outboundTag": "direct"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
       {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": { "udp": true, "auth": "noauth" },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": { "allowTransparent": false },
-        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
+        "tag": "proxy-10",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -2853,9 +2486,55 @@
           }
         }
       },
-      { "tag": "direct", "protocol": "freedom" },
-      { "tag": "block", "protocol": "blackhole" }
-    ]
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      }
+    ],
+    "burstObservatory": {
+      "pingConfig": {
+        "connectivity": "",
+        "destination": "http://www.gstatic.com/generate_204",
+        "interval": "10m",
+        "sampling": 2,
+        "timeout": "10s"
+      },
+      "subjectSelector": [
+        "proxy-1", "proxy-2", "proxy-3", "proxy-4", "proxy-5",
+        "proxy-6", "proxy-7", "proxy-8", "proxy-9", "proxy-10"
+      ]
+    },
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "block",
+          "protocol": ["bittorrent"],
+          "type": "field"
+        },
+        {
+          "balancerTag": "balancer",
+          "network": "tcp,udp",
+          "type": "field"
+        }
+      ],
+      "balancers": [
+        {
+          "tag": "balancer",
+          "selector": [
+            "proxy-1", "proxy-2", "proxy-3", "proxy-4", "proxy-5",
+            "proxy-6", "proxy-7", "proxy-8", "proxy-9", "proxy-10"
+          ],
+          "fallbackTag": "direct",
+          "strategy": { "type": "leastPing" }
+        }
+      ]
+    }
   },
   {
     "remarks": "🇩🇪 Обход LTE 1",
@@ -3563,4 +3242,4 @@
       { "tag": "block", "protocol": "blackhole" }
     ]
   }
-]
+] 
