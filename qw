@@ -2535,5 +2535,101 @@
         }
       ]
     }
+  },
+  {
+    "remarks": "🇷🇺 Обход LTE 10",
+    "dns": {
+      "servers": ["1.1.1.1", "1.0.0.1"],
+      "queryStrategy": "UseIP"
+    },
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "protocol": ["bittorrent"],
+          "outboundTag": "direct"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch"
+    },
+    "inbounds": [
+      {
+        "tag": "socks",
+        "port": 10808,
+        "listen": "127.0.0.1",
+        "protocol": "socks",
+        "settings": { "udp": true, "auth": "noauth" },
+        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
+      },
+      {
+        "tag": "http",
+        "port": 10809,
+        "listen": "127.0.0.1",
+        "protocol": "http",
+        "settings": { "allowTransparent": false },
+        "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "cdn.mydarknode.ru",
+              "port": 443,
+              "users": [
+                {
+                  "id": "b45a0354-4631-4827-aeb7-abf007699609",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "security": "tls",
+          "xhttpSettings": {
+            "host": "cdn.mydarknode.ru",
+            "mode": "packet-up",
+            "path": "/api/uploadFile/",
+            "extra": {
+              "xmux": {
+                "cMaxReuseTimes": "48-96",
+                "maxConcurrency": "4-8",
+                "maxConnections": 0,
+                "hKeepAlivePeriod": 0,
+                "hMaxRequestTimes": "500-900",
+                "hMaxReusableSecs": "300-900"
+              },
+              "seqKey": "page",
+              "sessionKey": "X-Request-Id",
+              "xPaddingKey": "_dc",
+              "seqPlacement": "query",
+              "uplinkDataKey": "X-Payload",
+              "xPaddingBytes": "80-240",
+              "xPaddingMethod": "tokenish",
+              "uplinkChunkSize": "2048-3072",
+              "sessionPlacement": "header",
+              "uplinkHTTPMethod": "GET",
+              "xPaddingObfsMode": true,
+              "xPaddingPlacement": "query",
+              "scMaxEachPostBytes": "4096-8192",
+              "uplinkDataPlacement": "header"
+            }
+          },
+          "tlsSettings": {
+            "serverName": "cdn.mydarknode.ru",
+            "fingerprint": "chrome",
+            "alpn": ["h2", "http/1.1"]
+          }
+        }
+      },
+      { "tag": "direct", "protocol": "freedom" },
+      { "tag": "block", "protocol": "blackhole" }
+    ]
   }
-]
+] 
