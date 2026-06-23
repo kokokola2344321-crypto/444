@@ -2152,67 +2152,6 @@
     ]
   },
   {
-    "remarks": "🇪🇺 АВТО-ОБХОД",
-    "dns": {
-      "queryStrategy": "UseIPv4",
-      "servers": [
-        "1.1.1.1",
-        "https://dns.adguard.com/dns-query"
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": { "auth": "noauth", "udp": true },
-        "sniffing": { "destOverride": ["http", "tls", "quic"], "enabled": true, "routeOnly": false },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": { "allowTransparent": false },
-        "sniffing": { "destOverride": ["http", "tls", "quic"], "enabled": true, "routeOnly": false },
-        "tag": "http"
-      }
-    ],
-    "log": { "dnsLog": true, "loglevel": "warning" },
-    "outbounds": [
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole"
-      }
-    ],
-    "burstObservatory": {
-      "pingConfig": {
-        "connectivity": "",
-        "destination": "http://www.gstatic.com/generate_204",
-        "interval": "10m",
-        "sampling": 2,
-        "timeout": "10s"
-      },
-      "subjectSelector": []
-    },
-    "routing": {
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "outboundTag": "block",
-          "protocol": ["bittorrent"],
-          "type": "field"
-        }
-      ],
-      "balancers": []
-    }
-  },
-  {
     "remarks": "🇩🇪 Обход LTE 1",
     "dns": {
       "servers": ["1.1.1.1", "1.0.0.1"],
