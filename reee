@@ -4,27 +4,14 @@
 #support-url:https://t.me/MaxiNetvpn
 #profile-web-page-url:https://t.me/MaxiNetvpn
 
-🇩🇪 Германия №1
-vless://11c3c90f-d681-4f71-929e-68834d18b5cd@ilovemehmed.fyi:443?security=reality&encryption=none&pbk=PR4DWlJWELxElbmJ2JQAW1kge_Q5vqB--cj2Ro0jkHU&sid=a1b2c3d4&fp=qq&sni=ilovemehmed.fyi&flow=xtls-rprx-vision#🇩🇪%20Германия%20№1
-
-🇩🇪 Германия №2
-vless://11c3c90f-d681-4f71-929e-68834d18b5cd@tsvety24.xyz:443?security=reality&encryption=none&pbk=GMBjphFStM5UW_Z-Eai5ijBYNtLGD6xaelvH3f0WoTQ&sid=a1b2c3d4&fp=qq&sni=tsvety24.xyz&flow=xtls-rprx-vision#🇩🇪%20Германия%20№2
-
-🇩🇪 Германия №3
-vless://1a7c567a-3b82-03e8-8374-3998c07c3977@de.corpmail59.ru:51006?security=reality&encryption=none&pbk=vV3mxSgZ-8x3Gp373AXdMDM3FAdmLP0v5zIfI486SDI&sid=f8a8ee8381529673&fp=firefox&sni=max.ru&type=grpc&serviceName=grpc&multiMode=true#🇩🇪%20Германия%20№3
-
-🇳🇱 Нидерланды №1
-vless://11c3c90f-d681-4f71-929e-68834d18b5cd@astrakhanfish.shop:443?security=reality&encryption=none&pbk=DJEM-k4txgC54Y-Re_ePQBuAz_A2mGlZJGnfq-zY6AQ&sid=a1b2c3d4&fp=qq&sni=astrakhanfish.shop&flow=xtls-rprx-vision#🇳🇱%20Нидерланды%20№1
-
-🇫🇮 Финляндия №1
-vless://11c3c90f-d681-4f71-929e-68834d18b5cd@shop.id.boutique:443?security=reality&encryption=none&pbk=DJEM-k4txgC54Y-Re_ePQBuAz_A2mGlZJGnfq-zY6AQ&sid=a1b2c3d4&fp=qq&sni=shop.id.boutique&flow=xtls-rprx-vision#🇫🇮%20Финляндия%20№1
-
-🇸🇪 Швеция №1
-vless://11c3c90f-d681-4f71-929e-68834d18b5cd@novostroiki.me:443?security=reality&encryption=none&pbk=li2QTryCYWHsoNg4c7KksOoR0WQSvWJe5EeByz9PtGM&sid=a1b2c3d4&fp=qq&sni=novostroiki.me&flow=xtls-rprx-vision#🇸🇪%20Швеция%20№1
 vless://702fe9df-83d0-44ea-8c65-298361a6757a@5.231.123.135:443?flow=xtls-rprx-vision&encryption=none&security=reality&sni=api.led.samsung.com&fp=chrome&pbk=x8AqgiU2yHx67Yv2opPUV17wRjAz1ftFtVi2CcVup10&sid=e132826d&allowinsecure=0&type=tcp&headerType=none#%F0%9F%87%B3%F0%9F%87%B1%20Netherlands%201
 vless://702fe9df-83d0-44ea-8c65-298361a6757a@89.125.13.147:443?flow=xtls-rprx-vision&encryption=none&security=reality&sni=api.led.samsung.com&fp=chrome&pbk=x8AqgiU2yHx67Yv2opPUV17wRjAz1ftFtVi2CcVup10&sid=e132826d&allowinsecure=0&type=tcp&headerType=none#%F0%9F%87%AA%F0%9F%87%AA%20Estonia
-vless://612c872d-1370-4109-8644-f0755f97e33f@85.208.139.100:443?encryption=none&security=reality&sni=www.samsung.com&fp=firefox&pbk=GzOdZG9TCQSrZV7ivcmOq9tKWUf37QnoTxSHf32OfAs&sid=16&allowinsecure=0&type=tcp&headerType=none#%F0%9F%87%AA%F0%9F%87%BA%20%40VPNHOCTb_bot%20FREE%20%239%3FserverDescription%3D0JHQtdGB0YHRgNC%2B0YfQvdC%2B%0A
-vless://47883fd8-0478-414f-8230-6eeecedc234e@85.192.28.199:15901?type=tcp&encryption=none&security=none#Ниднрланды 
+vless://11c3c90f-d681-4f71-929e-68834d18b5cd@ilovemehmed.fyi:443?security=reality&encryption=none&pbk=PR4DWlJWELxElbmJ2JQAW1kge_Q5vqB--cj2Ro0jkHU&sid=a1b2c3d4&fp=qq&sni=ilovemehmed.fyi&flow=xtls-rprx-vision#🇩🇪%20Германия
+vless://1a7c567a-3b82-4b84-8374-3998c07c3977@fl.setlisting.ru:52006?security=tls&encryption=none&fp=qq&sni=&alpn=http/1.1&type=tcp&allowInsecure=false#🇫🇮%20Финляндия%20№1
+vless://4e6e6bb2-4614-0022-b3c4-f4666c85290f@95.143.188.10:443?security=reality&encryption=none&pbk=YHPoUNxsml4z6pYt-7djOb1lqnBjxCk4-2mk84pveyc&fp=chrome&sni=git.medrocket.ru&sid=3b5b38669a1a51c0&type=xhttp&path=%2Frepository&mode=packet-up#🇷🇺%20Russia%20%5B*CIDR%5D
+vless://2d1773bb-251e-4298-9105-4aa6f25e592c@46.182.24.124:443?security=reality&encryption=none&pbk=Kto_-HjLzajq1_Ffa69tSwfn-dIg1ow9elgaUBhkqyo&fp=firefox&sni=5post-gate.x5.ru&type=grpc#🇷🇺%20Russia%20%7C%20🌐%20%5B*CIDR%5D
+vless://8a6f9d0b-dc16-431b-8914-cf8fde1eae7e@213.219.212.105:443?security=reality&encryption=none&pbk=AAZjVvbC7AwPKot_1ygO5VMpN7XYifCA7lG0RNR5sEk&fp=chrome&sni=eh.vk.ru&flow=xtls-rprx-vision&type=tcp#🇷🇺%20Russia%20%7C%20🌐%20%5B*CIDR%5D%20VK
+vless://2d1773bb-251e-4298-9105-4aa6f25e592c@46.182.24.124:443?security=reality&encryption=none&pbk=Kto_-HjLzajq1_Ffa69tSwfn-dIg1ow9elgaUBhkqyo&fp=chrome&sni=5post-gate.x5.ru&type=grpc#🇷🇺%20Russia%20%7C%20🌐%20%5B*CIDR%5D%20(2)
 
 
 
