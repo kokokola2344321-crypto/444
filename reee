@@ -14,10 +14,17 @@ vless://cb784d00-d34a-4389-b938-8717f7b28353@31.76.251.151:443?flow=xtls-rprx-vi
 
 
 vless://4e6e6bb2-4614-0022-b3c4-f4666c85290f@95.143.188.10:443?security=reality&encryption=none&pbk=YHPoUNxsml4z6pYt-7djOb1lqnBjxCk4-2mk84pveyc&fp=chrome&sni=git.medrocket.ru&sid=3b5b38669a1a51c0&type=xhttp&path=%2Frepository&mode=packet-up#🇷🇺%20Russia%20%5B*CIDR%5D
-vless://2d1773bb-251e-4298-9105-4aa6f25e592c@46.182.24.124:443?security=reality&encryption=none&pbk=Kto_-HjLzajq1_Ffa69tSwfn-dIg1ow9elgaUBhkqyo&fp=firefox&sni=5post-gate.x5.ru&type=grpc#🇷🇺%20Russia%20%7C%20🌐Обход 1
-vless://8a6f9d0b-dc16-431b-8914-cf8fde1eae7e@213.219.212.105:443?security=reality&encryption=none&pbk=AAZjVvbC7AwPKot_1ygO5VMpN7XYifCA7lG0RNR5sEk&fp=chrome&sni=eh.vk.ru&flow=xtls-rprx-vision&type=tcp#🇷🇺%20Russia%20%7C%20🌐Обход 2
-vless://2d1773bb-251e-4298-9105-4aa6f25e592c@46.182.24.124:443?security=reality&encryption=none&pbk=Kto_-HjLzajq1_Ffa69tSwfn-dIg1ow9elgaUBhkqyo&fp=chrome&sni=5post-gate.x5.ru&type=grpc#🇷🇺%20Russia%20%7C%20🌐Обход 3
+Белые списки №5
+vless://3e7cede4-721a-4807-b0a2-5fe6586af907@45.194.10.184:8443?security=reality&encryption=none&pbk=L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA&fp=chrome&sni=storage.yandex.net&sid=2cfb5a0ae8ab0cb0&flow=xtls-rprx-vision&type=tcp#Белые%20списки%20№1
 
+Белые списки №7
+vless://3e7cede4-721a-4807-b0a2-5fe6586af907@45.194.10.71:8443?security=reality&encryption=none&pbk=L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA&fp=firefox&sni=storage.yandex.net&sid=2cfb5a0ae8ab0cb0&flow=xtls-rprx-vision&type=tcp#Белые%20списки%20№2
+
+Белые списки №9
+vless://3e7cede4-721a-4807-b0a2-5fe6586af907@45.194.10.114:8443?security=reality&encryption=none&pbk=L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA&fp=firefox&sni=storage.yandex.net&sid=2cfb5a0ae8ab0cb0&flow=xtls-rprx-vision&type=tcp#Белые%20списки%20№3
+
+Белые списки №41
+vless://c61ec320-29f1-4e00-9272-8b676e6957b4@89.169.39.55:443?security=reality&encryption=none&pbk=Lbug_wz0y9xgKeDK44D9kuUap0fXzNKyv_nMJxnZRzU&fp=qq&sni=max.ru&sid=28a059440d3d5ba1&flow=xtls-rprx-vision&type=tcp#Белые%20списки%20№4
 
 
 
