@@ -4,17 +4,13 @@
 #support-url:https://t.me/MaxiNetvpn
 #profile-web-page-url:https://t.me/MaxiNetvpn
 
-vless://702fe9df-83d0-44ea-8c65-298361a6757a@5.231.123.135:443?flow=xtls-rprx-vision&encryption=none&security=reality&sni=api.led.samsung.com&fp=chrome&pbk=x8AqgiU2yHx67Yv2opPUV17wRjAz1ftFtVi2CcVup10&sid=e132826d&allowinsecure=0&type=tcp&headerType=none#%F0%9F%87%B3%F0%9F%87%B1%20Netherlands%201
-vless://addcd802-c4c1-002f-9f90-f4eaa5416127@185.137.232.194:443?encryption=none&security=reality&sni=aispir.ru&fp=firefox&pbk=kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE&sid=8ba6e72ee60667f6&allowinsecure=0&type=xhttp&mode=auto&path=%2Fassets#🇸🇪Швеция 
-vless://467f4f5e-adb3-4724-ad0d-245bbc296789@149.33.0.214:14302?flow=xtls-rprx-vision&encryption=none&security=reality&sni=www.samsung.com&fp=firefox&pbk=lw7-Msn5E2O6HbBdqMw9SvoDJgbDIvHss0UVQ9iZFRc&sid=106f1604d65bb70c&allowinsecure=0&type=tcp&headerType=none#%F0%9F%87%B0%F0%9F%87%BF%20Казахстан 
+vless://cb784d00-d34a-4389-b938-8717f7b28353@81.90.17.168:443?encryption=none&security=reality&sni=www.twitch.tv&fp=firefox&pbk=KDhxi4Z29ecbnAmr6cv-n6UVDScHFHu0x5qkrBtjlHg&sid=5edb391061e856bc&allowinsecure=0&type=xhttp&mode=auto&path=%2Falor-xhttp#🇪🇸Испания 
+vless://cb784d00-d34a-4389-b938-8717f7b28353@94.183.208.60:443?flow=xtls-rprx-vision&encryption=none&security=reality&sni=www.twitch.tv&fp=firefox&pbk=o4B5nNF60AmdE2U_x3fVhGzF5x_nxkX02SeCO_DAT0U&sid=a7d9c4e58b1f2036&allowinsecure=0&type=tcp&headerType=none#🇳🇱 Недерланды 
 
 
 vless://4e6e6bb2-4614-0022-b3c4-f4666c85290f@95.143.188.10:443?security=reality&encryption=none&pbk=YHPoUNxsml4z6pYt-7djOb1lqnBjxCk4-2mk84pveyc&fp=chrome&sni=git.medrocket.ru&sid=3b5b38669a1a51c0&type=xhttp&path=%2Frepository&mode=packet-up#🇷🇺%20Russia%20%5B*CIDR%5D
 vless://c61ec320-29f1-4e00-9272-8b676e6957b4@89.169.39.55:443?security=reality&encryption=none&pbk=Lbug_wz0y9xgKeDK44D9kuUap0fXzNKyv_nMJxnZRzU&fp=qq&sni=max.ru&sid=28a059440d3d5ba1&flow=xtls-rprx-vision&type=tcp#Белые%20списки%20№1
 vless://7cec3808-65d4-4dbd-941f-e9b640977071@185.71.67.223:443?encryption=none&security=tls&sni=cdn.stroimvmeste.icu&fp=chrome&allowinsecure=0&type=xhttp&mode=auto&host=cdn.stroimvmeste.icu&path=%2Fstart#Белые%20списки%20№2
-less://dba50bb9-2456-4128-8632-f7ba1e6a7ab5@78.41.111.87:443?encryption=none&security=tls&sni=s10211.cdn.ngenix.net&alpn=http%2F1.1&fp=qq&allowinsecure=0&type=ws&host=s10211.cdn.ngenix.net&path=%2Fapi%2Fuser#%D0%91%D0%B5%D0%BB%D1%8B%D0%B5%20%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B8%20%E2%84%963
-ess://c40f773e-3b96-417e-b22c-e48cb63ca7d9@144.31.87.16:2087?encryption=none&security=reality&sni=drive.google.com&fp=chrome&pbk=HbdLInxPHfxrLO_H1p1Zaa13MTkoI0oDxwD5Js1gtks&sid=fb2c2174a64f4090&allowinsecure=0&type=splithttp&mode=auto&host=tradingview.com&path=%2F&extra=%7B%22scMaxEachPostBytes%22%3A1000000.0%2C%22scMaxConcurrentPosts%22%3A100.0%2C%22scMinPostsIntervalMs%22%3A30.0%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22noGRPCHeader%22%3Afalse%7D#%F0%9F%87%B9%F0%9F%87%B7%D0%A2%D1%83%D1%80%D1%86%D0%B8%D1%8F
-
 
 
 
