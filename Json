@@ -1,1471 +1,1369 @@
 [
- {
-  "dns": {
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "1.0.0.1"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "socks"
+  {
+    "dns": {
+      "queryStrategy": "UseIPv4",
+      "servers": ["1.1.1.1", "1.0.0.1"]
     },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "allowTransparent": false
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "http"
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "87.120.108.150",
-            "port": 443,
-            "users": [
-              {
-                "id": "e190e677-40a4-4786-9d46-81155b158749",
-                "encryption": "none"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "grpc",
-        "security": "reality",
-        "realitySettings": {
-          "fingerprint": "firefox",
-          "publicKey": "jgf0wWpgkEJZzu9wu45Ms33SNZpibtx507rpvzfz3mQ",
-          "serverName": "www.amd.com",
-          "shortId": "635a76c25a4b1820"
-        },
-        "grpcSettings": {
-          "serviceName": "grpc-api-v2",
-          "multiMode": true
-        }
-      },
-      "tag": "proxy"
-    },
-    {
-      "protocol": "freedom",
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "block"
-    }
-  ],
-  "remarks": "🇩🇪 Германия №1",
-  "routing": {
-    "domainMatcher": "hybrid",
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
+    "inbounds": [
       {
-        "outboundTag": "direct",
-        "protocol": [
-          "bittorrent"
-        ],
-        "type": "field"
-      }
-    ]
-  }
-},
-{
-  "dns": {
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "1.0.0.1"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "socks"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "allowTransparent": false
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "http"
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "194.55.239.129",
-            "port": 8443,
-            "users": [
-              {
-                "id": "ecad47b0-249e-001e-adff-e3c8f02b1897",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "fingerprint": "chrome",
-          "publicKey": "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc",
-          "serverName": "rutube.ru",
-          "shortId": "43dcff53849b81e6"
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
         },
-        "tcpSettings": {}
-      },
-      "tag": "proxy"
-    },
-    {
-      "protocol": "freedom",
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "block"
-    }
-  ],
-  "remarks": ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]",
-  "routing": {
-    "domainMatcher": "hybrid",
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "outboundTag": "direct",
-        "protocol": [
-          "bittorrent"
-        ],
-        "type": "field"
-      }
-    ]
-  }
-},
-{
-  "dns": {
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "1.0.0.1"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "socks"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "allowTransparent": false
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "http"
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "194.55.239.189",
-            "port": 8443,
-            "users": [
-              {
-                "id": "ecad47b0-249e-0007-adff-e3c8f02b1897",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "fingerprint": "edge",
-          "publicKey": "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc",
-          "serverName": "rutube.ru",
-          "shortId": "43dcff53849b81e6"
+        "sniffing": {
+          "destOverride": ["http", "tls", "quic"],
+          "enabled": true,
+          "routeOnly": false
         },
-        "tcpSettings": {}
-      },
-      "tag": "proxy"
-    },
-    {
-      "protocol": "freedom",
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "block"
-    }
-  ],
-  "remarks": "🇪🇪 📱🏳️ Эстония №2",
-  "routing": {
-    "domainMatcher": "hybrid",
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "outboundTag": "direct",
-        "protocol": [
-          "bittorrent"
-        ],
-        "type": "field"
-      }
-    ]
-  }
-},
-{
-  "dns": {
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "1.0.0.1"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "socks"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "allowTransparent": false
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "http"
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "81.163.22.231",
-            "port": 47884,
-            "users": [
-              {
-                "id": "c8b5f6c9-83ff-4ca1-be9c-f997a5b2f692",
-                "encryption": "none"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "grpc",
-        "security": "reality",
-        "realitySettings": {
-          "fingerprint": "qq",
-          "publicKey": "4kfgvWhvI42Kjaf9y8Pw006LCSUQyeiosQSNa2RrK14",
-          "serverName": "kinopoisk.ru",
-          "shortId": "847a06884457c506"
-        },
-        "grpcSettings": {
-          "serviceName": "cloud"
-        }
-      },
-      "tag": "proxy"
-    },
-    {
-      "protocol": "freedom",
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "block"
-    }
-  ],
-  "remarks": "🇩🇪 📱🏳️ Германия №1",
-  "routing": {
-    "domainMatcher": "hybrid",
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "outboundTag": "direct",
-        "protocol": [
-          "bittorrent"
-        ],
-        "type": "field"
-      }
-    ]
-  }
-},
-{
-  "dns": {
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "1.0.0.1"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "socks"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "allowTransparent": false
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "http"
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "194.55.239.206",
-            "port": 8443,
-            "users": [
-              {
-                "id": "ecad47b0-249e-001a-adff-e3c8f02b1897",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "fingerprint": "edge",
-          "publicKey": "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc",
-          "serverName": "rutube.ru",
-          "shortId": "43dcff53849b81e6"
-        },
-        "tcpSettings": {}
-      },
-      "tag": "proxy"
-    },
-    {
-      "protocol": "freedom",
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "block"
-    }
-  ],
-  "remarks": "🇩🇪 📱🏳️ Германия 2",
-  "routing": {
-    "domainMatcher": "hybrid",
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "outboundTag": "direct",
-        "protocol": [
-          "bittorrent"
-        ],
-        "type": "field"
-      }
-    ]
-  }
-},
-{
-  "dns": {
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "1.0.0.1"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "socks"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "allowTransparent": false
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "http"
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "194.55.239.206",
-            "port": 8443,
-            "users": [
-              {
-                "id": "ecad47b0-249e-001a-adff-e3c8f02b1897",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "fingerprint": "qq",
-          "publicKey": "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc",
-          "serverName": "rutube.ru",
-          "shortId": "43dcff53849b81e6"
-        },
-        "tcpSettings": {}
-      },
-      "tag": "proxy"
-    },
-    {
-      "protocol": "freedom",
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "block"
-    }
-  ],
-  "remarks": "🇩🇪 📱🏳️ Германия №23",
-  "routing": {
-    "domainMatcher": "hybrid",
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "outboundTag": "direct",
-        "protocol": [
-          "bittorrent"
-        ],
-        "type": "field"
-      }
-    ]
-  }
-},
-{
-  "log": {
-    "access": "",
-    "error": "",
-    "loglevel": "warning"
-  },
-  "dns": {
-    "servers": [
-      "https://8.8.8.8/dns-query",
-      "https://1.1.1.1/dns-query",
-      "https+local://8.8.8.8/dns-query",
-      "https+local://1.1.1.1/dns-query"
-    ],
-    "queryStrategy": "UseIPv4"
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "quic",
-          "tls"
-        ],
-        "enabled": true,
-        "excludedDomains": [],
-        "metadataOnly": false,
-        "routeOnly": true
-      },
-      "tag": "socks-in"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "auth": "noauth",
-        "udp": true
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "quic",
-          "tls"
-        ],
-        "enabled": true,
-        "excludedDomains": [],
-        "metadataOnly": false,
-        "routeOnly": true
-      },
-      "tag": "http"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10820,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "quic",
-          "tls"
-        ],
-        "enabled": true,
-        "excludedDomains": [],
-        "metadataOnly": false,
-        "routeOnly": true
-      },
-      "tag": "socks-direct"
-    }
-  ],
-  "outbounds": [
-    {
-      "tag": "proxy-tcp-reality-direct-1",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "51.250.0.174",
-            "port": 443,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "ads.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "proxy-tcp-reality-bridge",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "51.250.0.174",
-            "port": 443,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "ads.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "youtube-proxy-1",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "fi-hel-hostvds-05.sssrvpn.pro",
-            "port": 443,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "ads.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "youtube-proxy-2",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "fi-hel-hostvds-06.sssrvpn.pro",
-            "port": 443,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "ads.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "youtube-proxy-3",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "fi-hel-hostvds-07.sssrvpn.pro",
-            "port": 443,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "ads.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "youtube-proxy-4",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "ru-msk-fvds-73.sssrvpn.pro",
-            "port": 443,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "ads.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "youtube-proxy-5",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "ru-msk-fvds-74.sssrvpn.pro",
-            "port": 443,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "ads.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "tiktok-proxy",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "bridge.pool.sssrvpn.pro",
-            "port": 8454,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "ads.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "us-proxy",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "bridge.pool.sssrvpn.pro",
-            "port": 8446,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "ads.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "protocol": "freedom",
-      "domainStrategy": "ForceIPv4",
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "block"
-    }
-  ],
-  "observatory": {
-    "subjectSelector": [
-      "youtube-proxy-1",
-      "youtube-proxy-2",
-      "youtube-proxy-3",
-      "youtube-proxy-4",
-      "youtube-proxy-5",
-      "proxy-tcp-reality-bridge",
-      "proxy-tcp-reality-direct-1"
-    ],
-    "probeURL": "https://cloudflare.com/cdn-cgi/trace",
-    "probeInterval": "10m",
-    "enableConcurrency": true
-  },
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "balancers": [
-      {
-        "tag": "balancer",
-        "selector": [
-          "proxy-tcp-reality-direct"
-        ],
-        "strategy": {
-          "type": "roundRobin"
-        },
-        "fallbackTag": "proxy-tcp-reality-bridge"
+        "tag": "socks"
       },
       {
-        "tag": "balancer-youtube",
-        "selector": [
-          "youtube-proxy"
-        ],
-        "strategy": {
-          "type": "leastLoad"
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
         },
-        "fallbackTag": "youtube-proxy-1"
+        "sniffing": {
+          "destOverride": ["http", "tls", "quic"],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
       }
     ],
-    "rules": [
+    "outbounds": [
       {
-        "type": "field",
-        "network": "tcp,udp",
-        "balancerTag": "balancer"
-      }
-    ]
-  },
-  "remarks": "🇷🇺 Белые списки 1"
-},
-{
-  "log": {
-    "access": "",
-    "error": "",
-    "loglevel": "warning"
-  },
-  "dns": {
-    "servers": [
-      "https://8.8.8.8/dns-query",
-      "https://1.1.1.1/dns-query",
-      "https+local://8.8.8.8/dns-query",
-      "https+local://1.1.1.1/dns-query"
-    ],
-    "queryStrategy": "UseIPv4"
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "quic",
-          "tls"
-        ],
-        "enabled": true,
-        "excludedDomains": [],
-        "metadataOnly": false,
-        "routeOnly": true
-      },
-      "tag": "socks-in"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "auth": "noauth",
-        "udp": true
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "quic",
-          "tls"
-        ],
-        "enabled": true,
-        "excludedDomains": [],
-        "metadataOnly": false,
-        "routeOnly": true
-      },
-      "tag": "http"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10820,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "quic",
-          "tls"
-        ],
-        "enabled": true,
-        "excludedDomains": [],
-        "metadataOnly": false,
-        "routeOnly": true
-      },
-      "tag": "socks-direct"
-    }
-  ],
-  "outbounds": [
-    {
-      "tag": "proxy-tcp-reality-direct-1",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "51.250.0.174",
-            "port": 443,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "5post-gate.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "proxy-tcp-reality-bridge",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "51.250.0.174",
-            "port": 443,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "5post-gate.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "youtube-proxy-1",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "fi-hel-hostvds-05.sssrvpn.pro",
-            "port": 443,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "5post-gate.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "youtube-proxy-2",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "fi-hel-hostvds-06.sssrvpn.pro",
-            "port": 443,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "5post-gate.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "youtube-proxy-3",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "fi-hel-hostvds-07.sssrvpn.pro",
-            "port": 443,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "5post-gate.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "youtube-proxy-4",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "ru-msk-fvds-73.sssrvpn.pro",
-            "port": 443,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "5post-gate.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "youtube-proxy-5",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "ru-msk-fvds-74.sssrvpn.pro",
-            "port": 443,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "5post-gate.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "tiktok-proxy",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "bridge.pool.sssrvpn.pro",
-            "port": 8454,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "5post-gate.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "tag": "us-proxy",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "bridge.pool.sssrvpn.pro",
-            "port": 8446,
-            "users": [
-              {
-                "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0,
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "5post-gate.x5.ru",
-          "fingerprint": "firefox",
-          "show": false,
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        }
-      }
-    },
-    {
-      "protocol": "freedom",
-      "domainStrategy": "ForceIPv4",
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "block"
-    }
-  ],
-  "observatory": {
-    "subjectSelector": [
-      "youtube-proxy-1",
-      "youtube-proxy-2",
-      "youtube-proxy-3",
-      "youtube-proxy-4",
-      "youtube-proxy-5",
-      "proxy-tcp-reality-bridge",
-      "proxy-tcp-reality-direct-1"
-    ],
-    "probeURL": "https://cloudflare.com/cdn-cgi/trace",
-    "probeInterval": "10m",
-    "enableConcurrency": true
-  },
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "balancers": [
-      {
-        "tag": "balancer",
-        "selector": [
-          "proxy-tcp-reality-direct"
-        ],
-        "strategy": {
-          "type": "roundRobin"
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "87.120.108.150",
+              "port": 443,
+              "users": [
+                {
+                  "id": "e190e677-40a4-4786-9d46-81155b158749",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
         },
-        "fallbackTag": "proxy-tcp-reality-bridge"
+        "streamSettings": {
+          "network": "grpc",
+          "security": "reality",
+          "realitySettings": {
+            "fingerprint": "firefox",
+            "publicKey": "jgf0wWpgkEJZzu9wu45Ms33SNZpibtx507rpvzfz3mQ",
+            "serverName": "www.amd.com",
+            "shortId": "635a76c25a4b1820"
+          },
+          "grpcSettings": {
+            "serviceName": "grpc-api-v2",
+            "multiMode": true
+          }
+        },
+        "tag": "proxy"
       },
       {
-        "tag": "balancer-youtube",
-        "selector": [
-          "youtube-proxy"
-        ],
-        "strategy": {
-          "type": "leastLoad"
-        },
-        "fallbackTag": "youtube-proxy-1"
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
       }
     ],
-    "rules": [
-      {
-        "type": "field",
-        "network": "tcp,udp",
-        "balancerTag": "balancer"
-      }
-    ]
+    "remarks": "🇩🇪 Германия №1",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "direct",
+          "protocol": ["bittorrent"],
+          "type": "field"
+        }
+      ]
+    }
   },
-  "remarks": "🇷🇺 Белые списки 2"
-}
+  {
+    "dns": {
+      "queryStrategy": "UseIPv4",
+      "servers": ["1.1.1.1", "1.0.0.1"]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10810,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": ["http", "tls", "quic"],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10811,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": ["http", "tls", "quic"],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "194.55.239.129",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "ecad47b0-249e-001e-adff-e3c8f02b1897",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "fingerprint": "chrome",
+            "publicKey": "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc",
+            "serverName": "rutube.ru",
+            "shortId": "43dcff53849b81e6"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "direct",
+          "protocol": ["bittorrent"],
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIPv4",
+      "servers": ["1.1.1.1", "1.0.0.1"]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10812,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": ["http", "tls", "quic"],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10813,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": ["http", "tls", "quic"],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "194.55.239.189",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "ecad47b0-249e-0007-adff-e3c8f02b1897",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "fingerprint": "edge",
+            "publicKey": "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc",
+            "serverName": "rutube.ru",
+            "shortId": "43dcff53849b81e6"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇪🇪 📱🏳️ Эстония №2",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "direct",
+          "protocol": ["bittorrent"],
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIPv4",
+      "servers": ["1.1.1.1", "1.0.0.1"]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10814,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": ["http", "tls", "quic"],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10815,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": ["http", "tls", "quic"],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "81.163.22.231",
+              "port": 47884,
+              "users": [
+                {
+                  "id": "c8b5f6c9-83ff-4ca1-be9c-f997a5b2f692",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "grpc",
+          "security": "reality",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "4kfgvWhvI42Kjaf9y8Pw006LCSUQyeiosQSNa2RrK14",
+            "serverName": "kinopoisk.ru",
+            "shortId": "847a06884457c506"
+          },
+          "grpcSettings": {
+            "serviceName": "cloud"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇩🇪 📱🏳️ Германия №1",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "direct",
+          "protocol": ["bittorrent"],
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIPv4",
+      "servers": ["1.1.1.1", "1.0.0.1"]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10816,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": ["http", "tls", "quic"],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10817,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": ["http", "tls", "quic"],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "194.55.239.206",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "ecad47b0-249e-001a-adff-e3c8f02b1897",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "fingerprint": "edge",
+            "publicKey": "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc",
+            "serverName": "rutube.ru",
+            "shortId": "43dcff53849b81e6"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇩🇪 📱🏳️ Германия 2",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "direct",
+          "protocol": ["bittorrent"],
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIPv4",
+      "servers": ["1.1.1.1", "1.0.0.1"]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10818,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": ["http", "tls", "quic"],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10819,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": ["http", "tls", "quic"],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "194.55.239.206",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "ecad47b0-249e-001a-adff-e3c8f02b1897",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc",
+            "serverName": "rutube.ru",
+            "shortId": "43dcff53849b81e6"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇩🇪 📱🏳️ Германия №23",
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "direct",
+          "protocol": ["bittorrent"],
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "log": {
+      "access": "",
+      "error": "",
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://1.1.1.1/dns-query",
+        "https+local://8.8.8.8/dns-query",
+        "https+local://1.1.1.1/dns-query"
+      ],
+      "queryStrategy": "UseIPv4"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10820,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": ["http", "quic", "tls"],
+          "enabled": true,
+          "excludedDomains": [],
+          "metadataOnly": false,
+          "routeOnly": true
+        },
+        "tag": "socks-in"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10821,
+        "protocol": "http",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": ["http", "quic", "tls"],
+          "enabled": true,
+          "excludedDomains": [],
+          "metadataOnly": false,
+          "routeOnly": true
+        },
+        "tag": "http"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10822,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": ["http", "quic", "tls"],
+          "enabled": true,
+          "excludedDomains": [],
+          "metadataOnly": false,
+          "routeOnly": true
+        },
+        "tag": "socks-direct"
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy-tcp-reality-direct-1",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "51.250.0.174",
+              "port": 443,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ads.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "proxy-tcp-reality-bridge",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "51.250.0.174",
+              "port": 443,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ads.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "youtube-proxy-1",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "fi-hel-hostvds-05.sssrvpn.pro",
+              "port": 443,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ads.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "youtube-proxy-2",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "fi-hel-hostvds-06.sssrvpn.pro",
+              "port": 443,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ads.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "youtube-proxy-3",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "fi-hel-hostvds-07.sssrvpn.pro",
+              "port": 443,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ads.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "youtube-proxy-4",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "ru-msk-fvds-73.sssrvpn.pro",
+              "port": 443,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ads.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "youtube-proxy-5",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "ru-msk-fvds-74.sssrvpn.pro",
+              "port": 443,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ads.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "tiktok-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "bridge.pool.sssrvpn.pro",
+              "port": 8454,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ads.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "us-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "bridge.pool.sssrvpn.pro",
+              "port": 8446,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ads.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "protocol": "freedom",
+        "domainStrategy": "ForceIPv4",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "observatory": {
+      "subjectSelector": [
+        "youtube-proxy-1",
+        "youtube-proxy-2",
+        "youtube-proxy-3",
+        "youtube-proxy-4",
+        "youtube-proxy-5",
+        "proxy-tcp-reality-bridge",
+        "proxy-tcp-reality-direct-1"
+      ],
+      "probeURL": "https://cloudflare.com/cdn-cgi/trace",
+      "probeInterval": "10m",
+      "enableConcurrency": true
+    },
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "balancers": [
+        {
+          "tag": "balancer",
+          "selector": ["proxy-tcp-reality-direct-1"],
+          "strategy": {
+            "type": "roundRobin"
+          },
+          "fallbackTag": "proxy-tcp-reality-bridge"
+        },
+        {
+          "tag": "balancer-youtube",
+          "selector": [
+            "youtube-proxy-1",
+            "youtube-proxy-2",
+            "youtube-proxy-3",
+            "youtube-proxy-4",
+            "youtube-proxy-5"
+          ],
+          "strategy": {
+            "type": "leastLoad"
+          },
+          "fallbackTag": "youtube-proxy-1"
+        }
+      ],
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "balancerTag": "balancer"
+        }
+      ]
+    },
+    "remarks": "🇷🇺 Белые списки 1"
+  },
+  {
+    "log": {
+      "access": "",
+      "error": "",
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "https://8.8.8.8/dns-query",
+        "https://1.1.1.1/dns-query",
+        "https+local://8.8.8.8/dns-query",
+        "https+local://1.1.1.1/dns-query"
+      ],
+      "queryStrategy": "UseIPv4"
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10823,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": ["http", "quic", "tls"],
+          "enabled": true,
+          "excludedDomains": [],
+          "metadataOnly": false,
+          "routeOnly": true
+        },
+        "tag": "socks-in"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10824,
+        "protocol": "http",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": ["http", "quic", "tls"],
+          "enabled": true,
+          "excludedDomains": [],
+          "metadataOnly": false,
+          "routeOnly": true
+        },
+        "tag": "http"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10825,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "destOverride": ["http", "quic", "tls"],
+          "enabled": true,
+          "excludedDomains": [],
+          "metadataOnly": false,
+          "routeOnly": true
+        },
+        "tag": "socks-direct"
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy-tcp-reality-direct-1",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "51.250.0.174",
+              "port": 443,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "5post-gate.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "proxy-tcp-reality-bridge",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "51.250.0.174",
+              "port": 443,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "5post-gate.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "youtube-proxy-1",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "fi-hel-hostvds-05.sssrvpn.pro",
+              "port": 443,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "5post-gate.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "youtube-proxy-2",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "fi-hel-hostvds-06.sssrvpn.pro",
+              "port": 443,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "5post-gate.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "youtube-proxy-3",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "fi-hel-hostvds-07.sssrvpn.pro",
+              "port": 443,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "5post-gate.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "youtube-proxy-4",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "ru-msk-fvds-73.sssrvpn.pro",
+              "port": 443,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "5post-gate.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "youtube-proxy-5",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "ru-msk-fvds-74.sssrvpn.pro",
+              "port": 443,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "5post-gate.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "tiktok-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "bridge.pool.sssrvpn.pro",
+              "port": 8454,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "5post-gate.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "tag": "us-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "bridge.pool.sssrvpn.pro",
+              "port": 8446,
+              "users": [
+                {
+                  "id": "3488c4cc-37af-424f-87d2-319aa4c6c0e8",
+                  "security": "auto",
+                  "encryption": "none",
+                  "email": "https://gozargah.github.io/marzban/",
+                  "alterId": 0,
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "5post-gate.x5.ru",
+            "fingerprint": "firefox",
+            "show": false,
+            "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+          }
+        }
+      },
+      {
+        "protocol": "freedom",
+        "domainStrategy": "ForceIPv4",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
+    ],
+    "observatory": {
+      "subjectSelector": [
+        "youtube-proxy-1",
+        "youtube-proxy-2",
+        "youtube-proxy-3",
+        "youtube-proxy-4",
+        "youtube-proxy-5",
+        "proxy-tcp-reality-bridge",
+        "proxy-tcp-reality-direct-1"
+      ],
+      "probeURL": "https://cloudflare.com/cdn-cgi/trace",
+      "probeInterval": "10m",
+      "enableConcurrency": true
+    },
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "balancers": [
+        {
+          "tag": "balancer",
+          "selector": ["proxy-tcp-reality-direct-1"],
+          "strategy": {
+            "type": "roundRobin"
+          },
+          "fallbackTag": "proxy-tcp-reality-bridge"
+        },
+        {
+          "tag": "balancer-youtube",
+          "selector": [
+            "youtube-proxy-1",
+            "youtube-proxy-2",
+            "youtube-proxy-3",
+            "youtube-proxy-4",
+            "youtube-proxy-5"
+          ],
+          "strategy": {
+            "type": "leastLoad"
+          },
+          "fallbackTag": "youtube-proxy-1"
+        }
+      ],
+      "rules": [
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "balancerTag": "balancer"
+        }
+      ]
+    },
+    "remarks": "🇷🇺 Белые списки 2"
+  }
 ]
